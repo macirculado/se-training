@@ -1,0 +1,25 @@
+#!/bin/bash
+myurl=$1
+#myurl="www.google.com"
+#status=`curl -o /dev/null --head --write-out '%{http_code}\n' $myurl`
+status=`curl -o /dev/null --silent --head --write-out '%{http_code}\n' $myurl`
+mystat=`echo $status | cut -c 1`
+
+if [ $mystat == "2" ]
+then
+ echo "HTTP Status: "$status 
+ exit 0
+elif [ $mystat == "3" ]
+then
+ echo "HTTP Status: "$status 
+ exit 1
+
+elif [ $mystat == "5" ]
+then
+ echo "HTTP Status: "$status 
+ exit 2
+
+else
+ echo "UNKNOWN"
+ exit 3
+fi
