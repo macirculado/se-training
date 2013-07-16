@@ -4,23 +4,28 @@ okstat=`echo $mylog | grep Ok`
 okstat1=`echo $?`
 warnstat=`echo $mylog | grep Warning`
 warnstat1=`echo $?`
-critstat=`echo $mylog | grep Critical`
-critstat1=`echo $?`
+unknownstat=`echo $mylog | grep UNKNOWN`
+unknownstat1=`echo $?`
 
-if [ $okstat1 == 0 ]
+if  [ $okstat1 -eq 0 ]
 then
  echo "Ok"
  exit 0
-elif [ $warnstat1 == 0 ]
+fi
+if [ $warnstat1 -eq 0 ]
 then
  echo "Warning"
  exit 1
-elif [ $critstat1 == 0 ]
+fi
+if [ $critstat1 -eq 0 ]
 then
  echo "Critical"
  exit 2
-else
+fi
+if [ $unknownstat1 -eq 0 ]
+then
  echo "Unknown"
  exit 3
-fi 
+fi
+
 
