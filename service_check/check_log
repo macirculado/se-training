@@ -4,6 +4,8 @@ okstat=`echo $mylog | grep Ok`
 okstat1=`echo $?`
 warnstat=`echo $mylog | grep Warning`
 warnstat1=`echo $?`
+critstat=`echo $mylog | grep CRITICAL`
+critstat1=`echo $?`
 unknownstat=`echo $mylog | grep UNKNOWN`
 unknownstat1=`echo $?`
 
