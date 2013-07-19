@@ -1,0 +1,36 @@
+statloop_function() {
+  statstr=(OK WARNING CRITICAL UNKNOWN)
+  random=$$$(date +%s)
+  randomstr=${statstr[$random % ${#statstr[@]}]}
+}
+statloop_function
+if [ $randomstr == "CRITICAL" ]
+then
+  #echo $randomstr
+  statloop_function
+fi
+
+while [ true ]
+do
+  statloop_function 
+  if [ $randomstr != "CRITICAL" ]
+  then
+    i=1
+    limit=40
+
+    while [ $i -le $limit ]
+    do
+      echo $randomstr
+      sleep 15
+      let i++
+    done
+
+  else
+    while [ true ]
+    do
+      echo $randomstr
+      sleep 15
+    done
+  fi
+
+done
