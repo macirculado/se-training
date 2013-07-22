@@ -15,12 +15,12 @@ do
   if [ $randomstr != "CRITICAL" ]
   then
     i=1
-    limit=5
+    limit=40
 
     while [ $i -le $limit ]
     do
       echo $randomstr
-      sleep 1
+      sleep 15
       let i++
     done
 
@@ -28,7 +28,7 @@ do
     while [ true ]
     do
       echo $randomstr
-      sleep 3
+      sleep 15
     done
   fi
 
