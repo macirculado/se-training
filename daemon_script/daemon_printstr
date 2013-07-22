@@ -4,11 +4,10 @@ statloop_function() {
   randomstr=${statstr[$random % ${#statstr[@]}]}
 }
 statloop_function
-if [ $randomstr == "CRITICAL" ]
-then
-  #echo $randomstr
+while [ $randomstr == "CRITICAL" ]
+do
   statloop_function
-fi
+done
 
 while [ true ]
 do
@@ -16,12 +15,12 @@ do
   if [ $randomstr != "CRITICAL" ]
   then
     i=1
-    limit=40
+    limit=5
 
     while [ $i -le $limit ]
     do
       echo $randomstr
-      sleep 15
+      sleep 1
       let i++
     done
 
@@ -29,7 +28,7 @@ do
     while [ true ]
     do
       echo $randomstr
-      sleep 15
+      sleep 3
     done
   fi
 
