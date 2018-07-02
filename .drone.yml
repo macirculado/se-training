@@ -1,7 +1,7 @@
 pipeline:
   build:
     image: node:latest
-    commands: npm install
+    commands: npm install aws-sdk
   test:
     image: node:latest
     commands: npm run test
