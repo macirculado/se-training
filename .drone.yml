@@ -3,7 +3,6 @@ pipeline:
     image: plugins/ecr
     registry: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com
     repo: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker
-    regio: ap-northeast-1
-    secrets: [ ecr_access_key, ecr_secret_key ]
-    tag: v20180703-01 
+    region: ap-northeast-1
+    tag: v20180703-v1
     file: Dockerfile 
