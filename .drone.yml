@@ -1,7 +1,9 @@
 pipeline:
-  build:
-    image: node:latest
-    commands: npm install aws-sdk
-  test:
-    image: node:latest
-    commands: npm run test
+  ecr:
+    image: plugins/ecr
+    registry: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com
+    repo: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker
+    regio: ap-northeast-1
+    secrets: [ ecr_access_key, ecr_secret_key ]
+    tag: v20180703-01 
+    file: Dockerfile 
