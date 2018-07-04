@@ -9,6 +9,16 @@ pipeline:
     when:
       event: tag
 
+  ecrpull:
+    image: plugins/ecr
+    registry: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com
+    repo: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker
+    region: ap-northeast-1
+    tag: ${DRONE_TAG}
+    file: Dockerfile 
+    when:
+      event: tag
+
   run:
     image: plugins/ecr
     detach: true
