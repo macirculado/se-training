@@ -10,17 +10,21 @@ pipeline:
     when:
       event: tag
 
-  auth:
-    image: plugins/ecr
-    commands:
-      - aws ecr get-login --region ap-northeast-1 | bash 
-      - docker pull 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker:${DRONE_TAG}
-    when:
-      state: success
+      #deploy:
+      #  kubernetes:
+      #    image: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker:${DRONE_TAG}
 
-  test:
-    image: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker:${DRONE_TAG}
-    commands:
-      - curl http://127.0.0.1:80
-    when:
-      state: success
+      #auth:
+      #  image: plugins/ecr
+      #  commands:
+      #    - aws ecr get-login --region ap-northeast-1 | bash 
+      #    - docker pull 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker:${DRONE_TAG}
+      #  when:
+      #    state: success
+
+      #test:
+      #  image: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker:${DRONE_TAG}
+      #  commands:
+      #    - curl http://127.0.0.1:80
+      #  when:
+      #    state: success
