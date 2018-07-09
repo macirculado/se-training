@@ -11,7 +11,7 @@ pipeline:
       event: tag
 
   auth:
-    image: drone-auth-ecr
+    image: centos:6
     commands:
       - aws ecr get-login --region ap-northeast-1 | bash 
       - echo DRONE_${DRONE_TAG}
