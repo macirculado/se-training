@@ -21,6 +21,6 @@ pipeline:
   test:
     image: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker:${DRONE_TAG}
     commands:
-      - curl http://localhost:80
+      - curl http://127.0.0.1:80
     when:
       state: success
