@@ -11,9 +11,6 @@ pipeline:
       event: tag
   deploy:
     image: quay.io/honestbee/drone-kubernetes
-    #kubernetes_server: ${KUBERNETES_SERVER}
-    #kubernetes_cert: ${KUBERNETES_CERT}
-    #kubernetes_token: ${KUBERNETES_TOKEN}
     deployment: httptestv1
     repo: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker
     container: httptestv1
