@@ -10,14 +10,13 @@ pipeline:
     when:
       event: tag
   deploy:
-    kubernetes:
-      image: quay.io/honestbee/drone-kubernetes
-      deployment: httptestv1
-      repo: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker
-      container: httptestv1
-      tag: ${DRONE_TAG}
-      when:
-        state: success
+    image: quay.io/honestbee/drone-kubernetes
+    deployment: httptest
+    repo: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker
+    container: httptest
+    tag: ${DRONE_TAG}
+    when:
+      state: success
   
   #test:
       #auth:
