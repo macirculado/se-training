@@ -11,6 +11,10 @@ pipeline:
       event: tag
   deploy:
     image: quay.io/honestbee/drone-kubernetes
+    commands:
+      - echo ${KUBERNETES_SERVER} 
+      - echo ${KUBERNETES_CERT} 
+      - echo ${KUBERNETES_TOKEN} 
     kubernetes_server: ${KUBERNETES_SERVER}
     kubernetes_cert: ${KUBERNETES_CERT}
     kubernetes_token: ${KUBERNETES_TOKEN}
