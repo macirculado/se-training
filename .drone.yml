@@ -14,9 +14,9 @@ pipeline:
     #kubernetes_server: ${KUBERNETES_SERVER}
     #kubernetes_cert: ${KUBERNETES_CERT}
     #kubernetes_token: ${KUBERNETES_TOKEN}
-    deployment: httptestv4
+    deployment: httptestv1
     repo: 862793644923.dkr.ecr.ap-northeast-1.amazonaws.com/test_k8sdocker
-    container: httptestv4
+    container: httptestv1
     tag: ${DRONE_TAG}
     when:
       state: success
