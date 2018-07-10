@@ -19,6 +19,8 @@ pipeline:
     container: httptestv4
     tag:
       - ${DRONE_TAG}
+    when:
+      state: success
   
   #test:
 
