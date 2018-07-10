@@ -21,7 +21,6 @@ pipeline:
     when:
       state: success
   
-  #test:
 
       #auth:
       #  image: plugins/ecr
